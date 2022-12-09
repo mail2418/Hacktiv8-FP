@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+    <link href="{{  url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+    <title>Credit Card Clustering</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+    integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/solid.css"
+    integrity="sha384-DhmF1FmzR9+RBLmbsAts3Sp+i6cZMWQwNTRsew7pO/e4gvzqmzcpAzhDIwllPonQ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/fontawesome.css"
+    integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous" />
+</head>
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed py-4">
+    <div class="container flex items-center">
+      <h1 class="logo mr-auto">Credit Card Clustering</h1>
+
+      <nav id="navbar" class="p-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Explanation</a></li>
+          <li><a class="nav-link   scrollto" href="#portfolio">Chart</a></li>
+          <li><a class="nav-link   scrollto" href="#chartjs">Chart JS</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Prediction Section</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+          data-aos="fade-up">
+          <h1>Clustering of Credit Card Users</h1>
+          <h2>This project is to fulfill the task of course introduction to Python For Data Science</h2>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in">
+          <img src="{{  url_for('static', filename='img/clust_gif.gif') }}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- End Hero -->
+  <main id="main">
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Explanation
+          <br>
+          <div class="mt-3 text-black-50" style="font-size:15px">
+            In this section, there is a description of the
+            abstract and also a
+            description
+            of the data.
+          </div>
+        </h2>
+    </section>
+    <!-- End About Section -->
+  </main>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+</body>
+</html>
