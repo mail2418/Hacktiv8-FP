@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> -->
     <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
     <link href="{{  url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{  url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{  url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{  url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+
     <title>Credit Card Clustering</title>
 
     <!-- Font Awesome -->
@@ -19,16 +23,16 @@
 </head>
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed py-4">
-    <div class="container flex items-center">
-      <h1 class="logo mr-auto">Credit Card Clustering</h1>
+  <header id="header" class="fixed py-4 top-0 right-0 left-0 block">
+    <div class="container mx-auto px-3 flex items-center sm:max-w-xl md:max-w-3xl">
+      <h1 class="logo !mr-auto">Credit Card Clustering</h1>
 
-      <nav id="navbar" class="p-0">
+      <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">Explanation</a></li>
-          <li><a class="nav-link   scrollto" href="#portfolio">Chart</a></li>
-          <li><a class="nav-link   scrollto" href="#chartjs">Chart JS</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Chart</a></li>
+          <li><a class="nav-link scrollto" href="#chartjs">Chart JS</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#contact">Prediction Section</a></li>
         </ul>
@@ -38,7 +42,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+  <!-- <section id="hero" class="d-flex align-items-center">
 
     <div class="container">
       <div class="row">
@@ -53,7 +57,7 @@
       </div>
     </div>
 
-  </section>
+  </section> -->
   <!-- End Hero -->
   <main id="main">
     <!-- About Section -->
@@ -73,6 +77,12 @@
     </section>
     <!-- End About Section -->
   </main>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/.js') }}"></script>
 </body>
 </html>
