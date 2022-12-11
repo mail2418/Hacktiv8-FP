@@ -91,26 +91,348 @@
         </div>
         <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-              aria-selected="true">Home</a>
+            <a class="nav-link active" id="definition-tab" data-toggle="tab" href="#definition" role="tab"
+              aria-controls="home" aria-selected="true">Definition</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-              aria-selected="false">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-              aria-selected="false">Contact</a>
+            <a class="nav-link" id="data-tab" data-toggle="tab" href="#data" role="tab" aria-controls="profile"
+              aria-selected="false">Data</a>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+          <div class="tab-pane fade show active" id="definition" role="tabpanel" aria-labelledby="definition-tab">
+            <div class="mt-4">
+              <p class="text-center">
+                Sistem kartu kredit adalah suatu jenis penyelesaian transaksi ritel dan sistem kredit, yang namanya
+                berasal dari kartu plastik yang diterbitkan kepada pengguna sistem tersebut. Kartu kredit adalah salah
+                satu instrumen utang yang dikeluarkan oleh pihak bank serta memiliki nilai peminjaman yang harus
+                dikembalikan ke bank penerbit dalam jangka waktu tertentu. Kartu kredit menjadi hal yang sangat berguna
+                untuk mereka yang mengerti cara pemakaiannya tapi akan berdampak negatif jika pegang kartu kredit tidak
+                mengetahui aturan main dari kartu kredit. Dengan menggunakan kartu kredit berarti, transaksi yang
+                dilakukan pemegang kartu akan dibayarkan oleh pihak bank terlebih dahulu dan akan menjadi hutang yang
+                harus dibayar di akhir bulan.
+              </p>
+              <p class="text-center">
+                Kelebihan kartu kredit adalah kartu kredit memberikan beberapa fasilitas - fasilitas seperti adanya
+                cicilan, promo, selalu membayar tagihan minimum dan tarik tunai seperti kartu debit untuk keperluan
+                mendesak. Sedangkan kelemahannya adalah boros, kena bunga tinggi dari tarik tunai, dan akibat adanya
+                selalu membayar tagihan minimum menyebabkan hutang semakin tinggi.
+              </p>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="data" role="tabpanel" aria-labelledby="data-tab">
+            <div class="mt-4">
+              <p>Dataset yang digunakan yaitu <a href="https://www.kaggle.com/arjunbhasin2013/ccdata"
+                  style="text-decoration: none;"><b style="font-style: italic">Credit Card Data</b></a> :
+                <br><br>
+                Dataset ini berisi transaksi pengguna kartu kredit sebanyak 9000 orang selama 6 bulan. Data ini
+                memiliki 18 atribut, antara lain:
+              </p>
+              <table class="table table-white table-bordered border-4 border-white">
+                <thead>
+                  <tr style="text-align: center">
+                    <th style="text-align: center" scope="col">No</th>
+                    <th style="text-align: center" scope="col">Column Name</th>
+                    <th style="text-align: center" scope="col">Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 1 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">1</th>
+                    <td>CUSTID</td>
+                    <td>Identification of Credit Card holder (Categorical)</td>
+                  </tr>
+                  <!-- 2 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">2</th>
+                    <td>BALANCE</td>
+                    <td>Balance amount left in their account to make purchases</td>
+                  </tr>
+                  <!-- 3 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">3</th>
+                    <td>BALANCEFREQUENCY</td>
+                    <td>How frequently the Balance is updated, score between 0 and 1 (1 = frequently updated, 0 = not
+                      frequently updated)</td>
+                  </tr>
+                  <!-- 4 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">4</th>
+                    <td>PURCHASES</td>
+                    <td>Amount of purchases made from account</td>
+                  </tr>
+                  <!-- 5 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">5</th>
+                    <td>ONEOFFPURCHASES</td>
+                    <td>Maximum purchase amount done in one-go</td>
+                  </tr>
+                  <!-- 6 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">6</th>
+                    <td>INSTALLMENTSPURCHASES</td>
+                    <td>Amount of purchase done in installment</td>
+                  </tr>
+                  <!-- 7 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">7</th>
+                    <td>CASHADVANCE</td>
+                    <td>Cash in advance given by the user</td>
+                  </tr>
+                  <!-- 8 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">8</th>
+                    <td>PURCHASESFREQUENCY</td>
+                    <td>How frequently the Purchases are being made, score between 0 and 1 (1 = frequently purchased,
+                      0 = not frequently purchased)</td>
+                  </tr>
+                  <!-- 9 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">9</th>
+                    <td>ONEOFFPURCHASESFREQUENCY</td>
+                    <td>How frequently Purchases are happening in one-go (1 = frequently purchased, 0 = not frequently
+                      purchased)</td>
+                  </tr>
+                  <!-- 10 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">10</th>
+                    <td>PURCHASESINSTALLMENTSFREQUENCY</td>
+                    <td>How frequently purchases in installments are being done (1 = frequently done, 0 = not
+                      frequently done)</td>
+                  </tr>
+                  <!-- 11 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">11</th>
+                    <td>CASHADVANCEFREQUENCY</td>
+                    <td>How frequently the cash in advance being paid</td>
+                  </tr>
+                  <!-- 12 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">12</th>
+                    <td>CASHADVANCETRX</td>
+                    <td>Number of Transactions made with style="text-align: center""Cash in Advance"</td>
+                  </tr>
+                  <!-- 13 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">13</th>
+                    <td>PURCHASESTRX</td>
+                    <td>Number of purchase transactions made</td>
+                  </tr>
+                  <!-- 14 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">14</th>
+                    <td>CREDITLIMIT</td>
+                    <td>Limit of Credit Card for user</td>
+                  </tr>
+                  <!-- 15 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">15</th>
+                    <td>PAYMENTS</td>
+                    <td>Amount of Payment done by user</td>
+                  </tr>
+                  <!-- 16 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">16</th>
+                    <td>MINIMUM_PAYMENTS</td>
+                    <td>Minimum amount of payments made by user</td>
+                  </tr>
+                  <!-- 17 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">17</th>
+                    <td>PRCFULLPAYMENT</td>
+                    <td>Percent of full payment paid by user</td>
+                  </tr>
+                  <!-- 18 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">18</th>
+                    <td>TENURE</td>
+                    <td>Tenure of credit card service for user</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
     </section>
     <!-- End About Section -->
 
+    <!-- Start Chart Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Chart and Diagram Data Analysis</h2>
+          <p>These chart represent some analysis of credit card user dataset using various of type diagram</p>
+        </div>
+
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up">
+          <li data-filter="*" class="filter-active">All Graphic Plot</li>
+          <li data-filter=".filter-eda">EDA Diagrams</li>
+          <li data-filter=".filter-kmeans">KMeans Clustering</li>
+          <li data-filter=".filter-hierarchy">Hierarchy Clustering</li>
+          <li data-filter=".filter-dbscan">DBScan Clustering</li>
+        </ul>
+
+        <div class="row portfolio-container" data-aos="fade-up">
+          <!-- Chart Section 1 -->
+          <div>
+            <!-- d-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-eda">
+              <div class="portfolio-img">
+                <img src="{{ url_for('static', filename='img/diagram/scatter_diagram.png') }}" class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Scatter Plot</h4>
+                <p>Relation between <strong>Purchases</strong> and <strong>Oneoff_purchases</strong></p>
+              </div>
+            </div>
+            <!-- d-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-eda">
+              <div class="portfolio-img">
+                <img src="{{ url_for('static', filename='img/diagram/corr_diagram.png') }}" class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Correlation Diagram</h4>
+                <p>Correlation between all features in dataset</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Chart Section 1 -->
+
+          <!-- Chart Section 2 -->
+          <div>
+            <!-- d-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-kmeans">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/silhoutte_kmeans.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Silhoutte Score KMeans</h4>
+                <p>Evaluation Score of KMeans according to amount of clusters</p>
+              </div>
+            </div>
+
+            <!-- d-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-kmeans">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/grid_kmeans.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Grid Score of KMeans</h4>
+                <p>Identify How Many Features used in KMeans Cluster</p>
+              </div>
+            </div>
+
+            <!-- d-3 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-kmeans">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/pca_kmeans.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>PCA KMeans</h4>
+                <p>Visualize of Distribution Cluster KMeans</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Chart Section 2 -->
+
+          <!-- Chart Section 3 -->
+          <div>
+            <!-- d-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/single_link_hierarchy.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Single Link Hierarchy</h4>
+                <p>Visualize Decision of Single Link Tree</p>
+              </div>
+            </div>
+
+            <!-- d-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/complete_link_hierarchy.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Complete Link Hierarchy</h4>
+                <p>Visualize Decision of Complete Link Tree</p>
+              </div>
+            </div>
+
+            <!-- d-3 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/average_link_hierarchy.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Average Link Hierarchy</h4>
+                <p>Visualize Decision of Average Link Tree</p>
+              </div>
+            </div>
+
+            <!-- d-4 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/ward_link_hierarchy.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Ward Link Hierarchy</h4>
+                <p>Visualize Decision of Ward Link Tree</p>
+              </div>
+            </div>
+
+            <!-- d-5 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/pca_ward.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>PCA Ward Link Hierarchy Clustering</h4>
+                <p>Visualize of Distribution Ward Link Hierarchy Clustering</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- End Chart Section 3 -->
+
+          <!-- Chart Section 4 -->
+          <div>
+            <!-- d-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dbscan">
+              <div class="portfolio-img">
+                <img src="{{ url_for('static', filename='img/diagram/grid_dbscan.png') }}" class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Grid Score of DBSCAN</h4>
+                <p>Identify How Many Features used in DBSCAN Cluster</p>
+              </div>
+            </div>
+            <!-- d-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dbscan">
+              <div class="portfolio-img">
+                <img src="{{ url_for('static', filename='img/diagram/pca_dbscan.png') }}" class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>PCA DBSCAN</h4>
+                <p>Visualize of Distribution <strong>DBSCAN</strong> Clustering</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Chart Section 4 -->
+
+        </div>
+      </div>
+    </section>
+    <!-- End Chart Section -->
+
+    <!-- Start Team Section -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+      </div>
+    </section>
+    <!-- End Team Section -->
 
   </main>
   <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
@@ -120,9 +442,15 @@
   <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/noframework.waypoints.js') }}"></script>
   <script src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>
