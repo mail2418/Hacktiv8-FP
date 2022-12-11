@@ -340,8 +340,9 @@
           <div>
             <!-- d-1 -->
             <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
-              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/single_link_hierarchy.png') }}"
-                  class="img-fluid" alt="">
+              <div class="portfolio-img"><img
+                  src="{{ url_for('static', filename='img/diagram/single_link_hierarchy.png') }}" class="img-fluid"
+                  alt="">
               </div>
               <div class="portfolio-info">
                 <h4>Single Link Hierarchy</h4>
@@ -351,8 +352,9 @@
 
             <!-- d-2 -->
             <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
-              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/complete_link_hierarchy.png') }}"
-                  class="img-fluid" alt="">
+              <div class="portfolio-img"><img
+                  src="{{ url_for('static', filename='img/diagram/complete_link_hierarchy.png') }}" class="img-fluid"
+                  alt="">
               </div>
               <div class="portfolio-info">
                 <h4>Complete Link Hierarchy</h4>
@@ -362,8 +364,9 @@
 
             <!-- d-3 -->
             <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
-              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/average_link_hierarchy.png') }}"
-                  class="img-fluid" alt="">
+              <div class="portfolio-img"><img
+                  src="{{ url_for('static', filename='img/diagram/average_link_hierarchy.png') }}" class="img-fluid"
+                  alt="">
               </div>
               <div class="portfolio-info">
                 <h4>Average Link Hierarchy</h4>
@@ -373,8 +376,9 @@
 
             <!-- d-4 -->
             <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
-              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/ward_link_hierarchy.png') }}"
-                  class="img-fluid" alt="">
+              <div class="portfolio-img"><img
+                  src="{{ url_for('static', filename='img/diagram/ward_link_hierarchy.png') }}" class="img-fluid"
+                  alt="">
               </div>
               <div class="portfolio-info">
                 <h4>Ward Link Hierarchy</h4>
@@ -430,11 +434,87 @@
     <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>This group contains 3 certified independent study participants, namely:</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start" data-aos="zoom-in">
+              <div class="pic"><img src="{{ url_for('static', filename='img/avatar_2.jpg') }}" class="img-fluid"
+                  alt=""></div>
+              <div class="member-info">
+                <h4>Muhammad Ismail</h4>
+                <span>Studi Independen</span>
+                <p>PYTN-KS08-011</p>
+                <div class="social">
+                  <a href="https://github.com/mail2418"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/muhammad-2418-ismail/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="{{ url_for('static', filename='img/avatar_1.jpg') }}" class="img-fluid"
+                  alt=""></div>
+              <div class="member-info">
+                <h4>Syahrani Nabilla Kharisma H</h4>
+                <span>Studi Independen</span>
+                <p>PYTN-KS08-013</p>
+                <div class="social">
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="#"><i
+                      class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+              <div class="pic"><img src="{{ url_for('static', filename='img/avatar_3.jpg') }}" class="img-fluid"
+                  alt=""></div>
+              <div class="member-info">
+                <h4>Shendy Krisyohanda</h4>
+                <span>Studi Independen</span>
+                <p>PYTN-KS08-021</p>
+                <div class="social">
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
     <!-- End Team Section -->
 
   </main>
+  <!-- End Main -->
+
+  <!-- Start Footer -->
+  <footer id="footer">
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Kelompok 5 PYTN-KS08</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
   <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
