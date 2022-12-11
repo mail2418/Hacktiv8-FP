@@ -47,9 +47,8 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">Explanation</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Chart</a></li>
-          <li><a class="nav-link scrollto" href="#chartjs">Chart JS</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Prediction Section</a></li>
+          <li><a class="nav-link scrollto" href="#prediction">Prediction Section</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -75,7 +74,7 @@
   <main id="main">
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -450,8 +449,8 @@
                 <span>Studi Independen</span>
                 <p>PYTN-KS08-011</p>
                 <div class="social">
-                  <a href="https://github.com/mail2418"><i class="fa-brands fa-github"></i></a>
-                  <a href="https://www.linkedin.com/in/muhammad-2418-ismail/"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://github.com/mail2418"  target="_blank"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/muhammad-2418-ismail/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
@@ -496,6 +495,121 @@
     </section>
     <!-- End Team Section -->
 
+    <!-- Start Prediction Section -->
+    <section id="prediction" class="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Prediction</h2>
+          <p>Section to predict K-Means cluster according to user's input</p>
+        </div>
+        <div class="mt-4 text-center">
+          <form action="{{ url_for('predict')}}" method="post" class="php-email-form">
+            <div class="row">
+              <div class="form-group">
+                <label for="BALANCE"><b>Balance</b></label>
+                <input type="text" class="form-control" name="BALANCE" id="BALANCE"
+                  placeholder="Insert Balance Value - Range (0 - 19043)" required>
+              </div>
+              <div class="form-group">
+                <label for="BALANCE_FREQUENCY"><b>Balance Frequency</b></label>
+                <input type="text" class="form-control" name="BALANCE_FREQUENCY" id="BALANCE_FREQUENCY"
+                  placeholder="Insert Balance Frequency Value - Range (0.0 - 1.0)" required>
+              </div>
+              <div class="form-group">
+                <label for="PURCHASES"><b>Purchases</b></label>
+                <input type="text" class="form-control" name="PURCHASES" id="PURCHASES"
+                  placeholder="Insert value Purchases - Range (0 - 49039)" required>
+              </div>
+              <div class="form-group">
+                <label for="ONEOFF_PURCHASES"><b>OneOff Purchases</b></label>
+                <input type="text" class="form-control" name="ONEOFF_PURCHASES" id="ONEOFF_PURCHASES"
+                  placeholder="Insert value OneOff Purchases - Range (0 - 40761)" required>
+              </div>
+              <div class="form-group">
+                <label for="INSTALLMENTS_PURCHASES"><b>Installments Purchases</b></label>
+                <input type="text" class="form-control" name="INSTALLMENTS_PURCHASES" id="INSTALLMENTS_PURCHASES"
+                  placeholder="Insert value Installments Purchases - Range (0 - 22500)" required>
+              </div>
+              <div class="form-group">
+                <label for="CASH_ADVANCE"><b>Cash advance</b></label>
+                <input type="text" class="form-control" name="CASH_ADVANCE" id="CASH_ADVANCE"
+                  placeholder="Insert value Cash advance - Range (0 - 47137)" required>
+              </div>
+              <div class="form-group">
+                <label for="PURCHASES_FREQUENCY"><b>Purchases Frequency</b></label>
+                <input type="text" class="form-control" name="PURCHASES_FREQUENCY" id="PURCHASES_FREQUENCY"
+                  placeholder="Insert value Purchases Frequency - Range (0.0 - 1.0)" required>
+              </div>
+              <div class=" form-group">
+                <label for="ONEOFF_PURCHASES_FREQUENCY"><b>OneOff Purchases Frequency</b></label>
+                <input type="text" class="form-control" name="ONEOFF_PURCHASES_FREQUENCY"
+                  id="ONEOFF_PURCHASES_FREQUENCY"
+                  placeholder="Insert value OneOff Purchases Frequency - Range (0.0 - 1.0)" required>
+              </div>
+              <div class=" form-group">
+                <label for="PURCHASES_INSTALLMENTS_FREQUENCY"><b>Purchases Installments Frequency</b></label>
+                <input type="text" class="form-control" name="PURCHASES_INSTALLMENTS_FREQUENCY"
+                  id="PURCHASES_INSTALLMENTS_FREQUENCY"
+                  placeholder="Insert value Purchases Installments Frequency - Range (0.0 - 1.0)" required>
+              </div>
+              <div class=" form-group">
+                <label for="CASH_ADVANCE_FREQUENCY"><b>Cash Advance Frequency</b></label>
+                <input type="text" class="form-control" name="CASH_ADVANCE_FREQUENCY" id="CASH_ADVANCE_FREQUENCY"
+                  placeholder="Insert value Cash Advance Frequency - Range (0.0 - 1.5)" required>
+              </div>
+              <div class=" form-group">
+                <label for="CASH_ADVANCE_TRX"><b>Cash Advance Transaction</b></label>
+                <input type="number" class="form-control" name="CASH_ADVANCE_TRX" id="CASH_ADVANCE_TRX"
+                  placeholder="Insert value Cash Advance Transaction - Range (0 - 123)" required min="0" max="123"
+                  value="0">
+              </div>
+              <div class="form-group">
+                <label for="PURCHASES_TRX"><b>Purchases Transaction</b></label>
+                <input type="number" class="form-control" name="PURCHASES_TRX" id="PURCHASES_TRX"
+                  placeholder="Insert value Purchases Transaction - Range (0 - 358)" required min="0" max="358"
+                  value="0">
+              </div>
+              <div class="form-group">
+                <label for="CREDIT_LIMIT"><b>Credit Limit</b></label>
+                <input type="text" class="form-control" name="CREDIT_LIMIT" id="CREDIT_LIMIT"
+                  placeholder="Insert Credit Limit - Range (50 - 30000)" required>
+              </div>
+              <div class="form-group">
+                <label for="PAYMENTS"><b>Payments</b></label>
+                <input type="text" class="form-control" name="PAYMENTS" id="PAYMENTS"
+                  placeholder="Insert Payments - Range (0 - 50721)" required>
+              </div>
+              <div class="form-group">
+                <label for="MINIMUM_PAYMENTS"><b>Minimum Payments</b></label>
+                <input type="text" class="form-control" name="MINIMUM_PAYMENTS" id="MINIMUM_PAYMENTS"
+                  placeholder="Insert Minimum Payments - Range (0 - 76406)" required>
+              </div>
+              <div class="form-group">
+                <label for="PRC_FULL_PAYMENT"><b>Price Full Payment</b></label>
+                <input type="text" class="form-control" name="PRC_FULL_PAYMENT" id="PRC_FULL_PAYMENT"
+                  placeholder="Insert Price Full Payment - Range (0.0 - 1.0)" required">
+              </div>
+              <div class="form-group">
+                <label for="TENURE"><b>Tenure</b></label>
+                <select class="form-select" aria-label="Default select example" name="TENURE" id="TENURE">
+                  <option selected>Choose for Tenure</option>
+                  <option value="6">6 Month</option>
+                  <option value="7">7 Month</option>
+                  <option value="8">8 Month</option>
+                  <option value="9">9 Month</option>
+                  <option value="10">10 Month</option>
+                  <option value="11">11 Month</option>
+                  <option value="12">12 Month</option>
+                </select>
+              </div>
+              <div class="text-center"><button type="submit">Predict</button></div>
+
+              <p class="message">{{prediction_text}}</p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- End Prediction Section -->
   </main>
   <!-- End Main -->
 

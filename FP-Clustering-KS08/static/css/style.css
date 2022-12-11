@@ -119,7 +119,7 @@ body {
   }
   
   #header.header-scrolled, #header.header-inner-pages {
-    background: rgba(144, 241, 165, 0.87);
+    background: rgba(169, 204, 99, 0.87);
   }
   
   #header .logo {
@@ -1475,6 +1475,11 @@ body {
     background: #fff;
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
   }
+
+  .contact .php-email-form .message{
+    margin:15px 0 0;
+    font-size:12px;
+  }
   
   .contact .php-email-form .form-group {
     padding-bottom: 8px;
@@ -1551,6 +1556,10 @@ body {
   
   .contact .php-email-form input {
     height: 44px;
+  }
+  .contact .php-email-form input[type='text'],
+  .contact .php-email-form input[type='number'] {
+    text-align: center;
   }
   
   .contact .php-email-form textarea {
