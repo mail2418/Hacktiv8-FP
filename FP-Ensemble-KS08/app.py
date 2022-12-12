@@ -3,9 +3,7 @@ import numpy as np
 import pickle
 
 # KMeans Model
-model = pickle.load(open('model/kmeans.pkl', 'rb'))
-# Scaller Model
-scaler = pickle.load(open('model/scaler.pkl', 'rb'))
+model = pickle.load(open('model/model_ETC_KS08.pkl', 'rb'))
 
 app = Flask(__name__, template_folder="templates")
 
@@ -52,14 +50,13 @@ def predict():
     ]
 
     final_feature = [np.array(feature)]
-    scaled_feature = scaler.fit_transform(final_feature)
-    prediction = model.predict(scaled_feature)
+    prediction = model.predict(final_feature)
 
-    output={0:'Orang yang tidak hedon',
-            1:'Orang yang sedikit hedon',
-            2:'Orang yang terlalu hedon'}
+    # output={0:'Orang yang tidak hedon',
+    #         1:'Orang yang sedikit hedon',
+    #         2:'Orang yang terlalu hedon'}
     
-    return render_template('index.html', prediction_text = 'Berdasarkan nilai dari inputtan, maka orang tersebut berada pada cluster {} yang mana merupakan {}'.format(prediction[0], output[prediction[0]]))
+    # return render_template('index.html', prediction_text = 'Berdasarkan nilai dari inputtan, maka orang tersebut berada pada cluster {} yang mana merupakan {}'.format(prediction[0], output[prediction[0]]))
     # return render_template('index.html', prediction_text = 'Fitur {}'.format(prediction[0]))
 
 
