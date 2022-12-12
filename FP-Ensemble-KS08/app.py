@@ -9,54 +9,37 @@ app = Flask(__name__, template_folder="templates")
 
 @app.route("/predict", methods=['POST'])
 def predict():
-    BALANCE = float(request.form["BALANCE"])
-    BALANCE_FREQUENCY = float(request.form["BALANCE_FREQUENCY"])
-    PURCHASES = float(request.form["PURCHASES"])
-    ONEOFF_PURCHASES = float(request.form["ONEOFF_PURCHASES"])
-    INSTALLMENTS_PURCHASES = float(request.form["INSTALLMENTS_PURCHASES"])
-    CASH_ADVANCE = float(request.form["CASH_ADVANCE"])
-    PURCHASES_FREQUENCY = float(request.form["PURCHASES_FREQUENCY"])
-    ONEOFF_PURCHASES_FREQUENCY = float(
-        request.form["ONEOFF_PURCHASES_FREQUENCY"])
-    PURCHASES_INSTALLMENTS_FREQUENCY = float(
-        request.form["PURCHASES_INSTALLMENTS_FREQUENCY"])
-    CASH_ADVANCE_FREQUENCY = float(request.form["CASH_ADVANCE_FREQUENCY"])
-    CASH_ADVANCE_TRX = float(request.form["CASH_ADVANCE_TRX"])
-    PURCHASES_TRX = float(request.form["PURCHASES_TRX"])
-    CREDIT_LIMIT = float(request.form["CREDIT_LIMIT"])
-    PAYMENTS = float(request.form["PAYMENTS"])
-    MINIMUM_PAYMENTS = float(request.form["MINIMUM_PAYMENTS"])
-    PRC_FULL_PAYMENT = float(request.form["PRC_FULL_PAYMENT"])
-    TENURE = float(request.form["TENURE"])
+    age = float(request.form["age"])
+    anaemia = float(request.form["anaemia"])
+    creatinine_phosphokinase = float(request.form["creatinine_phosphokinase"])
+    diabetes = float(request.form["diabetes"])
+    high_blood_pressure = float(request.form["high_blood_pressure"])
+    platelets = float(request.form["platelets"])
+    serum_creatinine = float(request.form["serum_creatinine"])
+    sex = float(request.form["sex"])
+    smoking = float(request.form["smoking"])
+    young_person = float(request.form["young_person"])
 
-    feature = [
-        BALANCE,
-        BALANCE_FREQUENCY,
-        PURCHASES,
-        ONEOFF_PURCHASES,
-        INSTALLMENTS_PURCHASES,
-        CASH_ADVANCE,
-        PURCHASES_FREQUENCY,
-        ONEOFF_PURCHASES_FREQUENCY,
-        PURCHASES_INSTALLMENTS_FREQUENCY,
-        CASH_ADVANCE_FREQUENCY,
-        CASH_ADVANCE_TRX,
-        PURCHASES_TRX,
-        CREDIT_LIMIT,
-        PAYMENTS,
-        MINIMUM_PAYMENTS,
-        PRC_FULL_PAYMENT,
-        TENURE
+    float_feature = [
+        age,
+        anaemia,
+        creatinine_phosphokinase,
+        diabetes,
+        high_blood_pressure,
+        platelets,
+        serum_creatinine,
+        sex,
+        smoking,
+        young_person
     ]
 
-    final_feature = [np.array(feature)]
+    final_feature = [np.array(float_feature)]
     prediction = model.predict(final_feature)
 
-    # output={0:'Orang yang tidak hedon',
-    #         1:'Orang yang sedikit hedon',
-    #         2:'Orang yang terlalu hedon'}
+    output={0:'Pasien cenderung Hidup',
+            1:'Pasien cenderung Meninggal'}
     
-    # return render_template('index.html', prediction_text = 'Berdasarkan nilai dari inputtan, maka orang tersebut berada pada cluster {} yang mana merupakan {}'.format(prediction[0], output[prediction[0]]))
+    return render_template('index.html', prediction_text = 'Berdasarkan nilai dari inputan, maka {} '.format(output[prediction[0]]))
     # return render_template('index.html', prediction_text = 'Fitur {}'.format(prediction[0]))
 
 
