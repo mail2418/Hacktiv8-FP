@@ -1,6 +1,6 @@
-### Kelompok E08, PREFIX IP: 192.196
+### Kelompok 5 PYTN-KS08
 
-| **No** | **Nama** | **NRP** |
+| **No** | **Nama** | **NIM** |
 | - | - | - |
 | 1. | Muhammad Ismail | PYTN-KS08-011 |
 | 2. | Syahrani Nabila Pardede | PYTN-KS08-013 |
@@ -39,24 +39,24 @@ Dataset ada di link berikut <a href="https://www.kaggle.com/datasets/andrewmvd/h
 
 ## Hero Section
 
-![Hero Section](/images/ensemble_1.png)
+![Hero Section](./images/ensemble_1.png)
 
 
 ## Explanation Section
 
-![Explanation Section](/images/ensemble_2.png)
+![Explanation Section](./images/ensemble_2.png)
 
 
 ## Chart and Diagram Section
 
-![Chart Section](/images/ensemble_3.png)
+![Chart Section](./images/ensemble_3.png)
 
 
 ## Team Section
 
-![Team Section](/images/ensemble_4.png)
+![Team Section](./images/ensemble_4.png)
 
 
 ## Prediction Section
 
-![Predict Section](/images/ensemble_5.png)
+![Predict Section](./images/ensemble_5.png)
