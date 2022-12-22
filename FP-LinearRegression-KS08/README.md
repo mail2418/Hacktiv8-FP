@@ -1,6 +1,7 @@
 ### Kelompok 5 PYTN-KS08
 
-| **No** | **Nama** | **NIM** |
+| **No** | **Nama** | **NRP** |
+=======
 | - | - | - |
 | 1. | Muhammad Ismail | PYTN-KS08-011 |
 | 2. | Syahrani Nabila Pardede | PYTN-KS08-013 |
