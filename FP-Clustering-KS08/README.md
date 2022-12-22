@@ -1,6 +1,6 @@
-### Kelompok E08, PREFIX IP: 192.196
+### Kelompok 5 PYTN-KS08
 
-| **No** | **Nama** | **NRP** |
+| **No** | **Nama** | **NIM** |
 | - | - | - |
 | 1. | Muhammad Ismail | PYTN-KS08-011 |
 | 2. | Syahrani Nabila Pardede | PYTN-KS08-013 |
