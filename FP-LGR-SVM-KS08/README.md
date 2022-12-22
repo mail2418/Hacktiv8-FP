@@ -1,7 +1,4 @@
-# Final Project 2 - Logistic Regression dan SVM
-
-
-### Kelompok E08, PREFIX IP: 192.196
+### Kelompok 5 PYTN-KS08
 
 | **No** | **Nama** | **NRP** |
 | - | - | - |
