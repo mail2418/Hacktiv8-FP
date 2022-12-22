@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+  <link href="{{  url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{  url_for('static', filename='vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <title>Final Project-4 Clustering</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+    integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/solid.css"
+    integrity="sha384-DhmF1FmzR9+RBLmbsAts3Sp+i6cZMWQwNTRsew7pO/e4gvzqmzcpAzhDIwllPonQ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/fontawesome.css"
+    integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous" />
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container  d-flex align-items-center">
+      <h1 class="me-auto logo ">Credit Card Clustering</h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Explanation</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Chart</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#prediction">Prediction Section</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+          data-aos="fade-up">
+          <h1>Final Project-4 Hacktiv8 Study Independent</h1>
+          <h2>This FP represent about clustering of credit card user using KMeans approach</h2>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in">
+          <img src="{{  url_for('static', filename='img/hero_img.jpg') }}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero -->
+  <main id="main">
+
+    <!-- About Section -->
+    <section id="about" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Explanation
+            <br>
+            <h6 class="mt-3 text-black-50">
+              In this section, there is a description of the
+              abstract and also a
+              description
+              of the data.
+            </h6>
+          </h2>
+        </div>
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="definition-tab" data-toggle="tab" href="#definition" role="tab"
+              aria-controls="home" aria-selected="true">Definition</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="data-tab" data-toggle="tab" href="#data" role="tab" aria-controls="profile"
+              aria-selected="false">Data</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="definition" role="tabpanel" aria-labelledby="definition-tab">
+            <div class="mt-4">
+              <p class="text-center">
+                Sistem kartu kredit adalah suatu jenis penyelesaian transaksi ritel dan sistem kredit, yang namanya
+                berasal dari kartu plastik yang diterbitkan kepada pengguna sistem tersebut. Kartu kredit adalah salah
+                satu instrumen utang yang dikeluarkan oleh pihak bank serta memiliki nilai peminjaman yang harus
+                dikembalikan ke bank penerbit dalam jangka waktu tertentu. Kartu kredit menjadi hal yang sangat berguna
+                untuk mereka yang mengerti cara pemakaiannya tapi akan berdampak negatif jika pegang kartu kredit tidak
+                mengetahui aturan main dari kartu kredit. Dengan menggunakan kartu kredit berarti, transaksi yang
+                dilakukan pemegang kartu akan dibayarkan oleh pihak bank terlebih dahulu dan akan menjadi hutang yang
+                harus dibayar di akhir bulan.
+              </p>
+              <p class="text-center">
+                Kelebihan kartu kredit adalah kartu kredit memberikan beberapa fasilitas - fasilitas seperti adanya
+                cicilan, promo, selalu membayar tagihan minimum dan tarik tunai seperti kartu debit untuk keperluan
+                mendesak. Sedangkan kelemahannya adalah boros, kena bunga tinggi dari tarik tunai, dan akibat adanya
+                selalu membayar tagihan minimum menyebabkan hutang semakin tinggi.
+              </p>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="data" role="tabpanel" aria-labelledby="data-tab">
+            <div class="mt-4">
+              <p>Dataset yang digunakan yaitu <a href="https://www.kaggle.com/arjunbhasin2013/ccdata"
+                  style="text-decoration: none;" target="_blank"><b style="font-style: italic">Credit Card Data</b></a> :
+                <br><br>
+                Dataset ini berisi transaksi pengguna kartu kredit sebanyak 9000 orang selama 6 bulan. Data ini
+                memiliki 18 atribut, antara lain:
+              </p>
+              <table class="table table-white table-bordered border-4 border-white">
+                <thead>
+                  <tr style="text-align: center">
+                    <th style="text-align: center" scope="col">No</th>
+                    <th style="text-align: center" scope="col">Column Name</th>
+                    <th style="text-align: center" scope="col">Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 1 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">1</th>
+                    <td>CUSTID</td>
+                    <td>Identification of Credit Card holder (Categorical)</td>
+                  </tr>
+                  <!-- 2 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">2</th>
+                    <td>BALANCE</td>
+                    <td>Balance amount left in their account to make purchases</td>
+                  </tr>
+                  <!-- 3 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">3</th>
+                    <td>BALANCEFREQUENCY</td>
+                    <td>How frequently the Balance is updated, score between 0 and 1 (1 = frequently updated, 0 = not
+                      frequently updated)</td>
+                  </tr>
+                  <!-- 4 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">4</th>
+                    <td>PURCHASES</td>
+                    <td>Amount of purchases made from account</td>
+                  </tr>
+                  <!-- 5 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">5</th>
+                    <td>ONEOFFPURCHASES</td>
+                    <td>Maximum purchase amount done in one-go</td>
+                  </tr>
+                  <!-- 6 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">6</th>
+                    <td>INSTALLMENTSPURCHASES</td>
+                    <td>Amount of purchase done in installment</td>
+                  </tr>
+                  <!-- 7 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">7</th>
+                    <td>CASHADVANCE</td>
+                    <td>Cash in advance given by the user</td>
+                  </tr>
+                  <!-- 8 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">8</th>
+                    <td>PURCHASESFREQUENCY</td>
+                    <td>How frequently the Purchases are being made, score between 0 and 1 (1 = frequently purchased,
+                      0 = not frequently purchased)</td>
+                  </tr>
+                  <!-- 9 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">9</th>
+                    <td>ONEOFFPURCHASESFREQUENCY</td>
+                    <td>How frequently Purchases are happening in one-go (1 = frequently purchased, 0 = not frequently
+                      purchased)</td>
+                  </tr>
+                  <!-- 10 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">10</th>
+                    <td>PURCHASESINSTALLMENTSFREQUENCY</td>
+                    <td>How frequently purchases in installments are being done (1 = frequently done, 0 = not
+                      frequently done)</td>
+                  </tr>
+                  <!-- 11 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">11</th>
+                    <td>CASHADVANCEFREQUENCY</td>
+                    <td>How frequently the cash in advance being paid</td>
+                  </tr>
+                  <!-- 12 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">12</th>
+                    <td>CASHADVANCETRX</td>
+                    <td>Number of Transactions made with style="text-align: center""Cash in Advance"</td>
+                  </tr>
+                  <!-- 13 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">13</th>
+                    <td>PURCHASESTRX</td>
+                    <td>Number of purchase transactions made</td>
+                  </tr>
+                  <!-- 14 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">14</th>
+                    <td>CREDITLIMIT</td>
+                    <td>Limit of Credit Card for user</td>
+                  </tr>
+                  <!-- 15 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">15</th>
+                    <td>PAYMENTS</td>
+                    <td>Amount of Payment done by user</td>
+                  </tr>
+                  <!-- 16 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">16</th>
+                    <td>MINIMUM_PAYMENTS</td>
+                    <td>Minimum amount of payments made by user</td>
+                  </tr>
+                  <!-- 17 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">17</th>
+                    <td>PRCFULLPAYMENT</td>
+                    <td>Percent of full payment paid by user</td>
+                  </tr>
+                  <!-- 18 -->
+                  <tr>
+                    <th style="text-align: center" scope="row">18</th>
+                    <td>TENURE</td>
+                    <td>Tenure of credit card service for user</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- Start Chart Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Chart and Diagram Data Analysis</h2>
+          <p>These chart represent some analysis of credit card user dataset using various of type diagram</p>
+        </div>
+
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up">
+          <li data-filter="*" class="filter-active">All Graphic Plot</li>
+          <li data-filter=".filter-eda">EDA Diagrams</li>
+          <li data-filter=".filter-kmeans">KMeans Clustering</li>
+          <li data-filter=".filter-hierarchy">Hierarchy Clustering</li>
+          <li data-filter=".filter-dbscan">DBScan Clustering</li>
+        </ul>
+
+        <div class="row portfolio-container" data-aos="fade-up">
+          <!-- Chart Section 1 -->
+          <div>
+            <!-- d-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-eda">
+              <div class="portfolio-img">
+                <img src="{{ url_for('static', filename='img/diagram/scatter_diagram.png') }}" class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Scatter Plot</h4>
+                <p>Relation between <strong>Purchases</strong> and <strong>Oneoff_purchases</strong></p>
+              </div>
+            </div>
+            <!-- d-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-eda">
+              <div class="portfolio-img">
+                <img src="{{ url_for('static', filename='img/diagram/corr_diagram.png') }}" class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Correlation Diagram</h4>
+                <p>Correlation between all features in dataset</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Chart Section 1 -->
+
+          <!-- Chart Section 2 -->
+          <div>
+            <!-- d-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-kmeans">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/silhoutte_kmeans.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Silhoutte Score KMeans</h4>
+                <p>Evaluation Score of KMeans according to amount of clusters</p>
+              </div>
+            </div>
+
+            <!-- d-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-kmeans">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/grid_kmeans.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Grid Score of KMeans</h4>
+                <p>Identify How Many Features used in KMeans Cluster</p>
+              </div>
+            </div>
+
+            <!-- d-3 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-kmeans">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/pca_kmeans.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>PCA KMeans</h4>
+                <p>Visualize of Distribution Cluster KMeans</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Chart Section 2 -->
+
+          <!-- Chart Section 3 -->
+          <div>
+            <!-- d-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img
+                  src="{{ url_for('static', filename='img/diagram/single_link_hierarchy.png') }}" class="img-fluid"
+                  alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Single Link Hierarchy</h4>
+                <p>Visualize Decision of Single Link Tree</p>
+              </div>
+            </div>
+
+            <!-- d-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img
+                  src="{{ url_for('static', filename='img/diagram/complete_link_hierarchy.png') }}" class="img-fluid"
+                  alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Complete Link Hierarchy</h4>
+                <p>Visualize Decision of Complete Link Tree</p>
+              </div>
+            </div>
+
+            <!-- d-3 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img
+                  src="{{ url_for('static', filename='img/diagram/average_link_hierarchy.png') }}" class="img-fluid"
+                  alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Average Link Hierarchy</h4>
+                <p>Visualize Decision of Average Link Tree</p>
+              </div>
+            </div>
+
+            <!-- d-4 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img
+                  src="{{ url_for('static', filename='img/diagram/ward_link_hierarchy.png') }}" class="img-fluid"
+                  alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Ward Link Hierarchy</h4>
+                <p>Visualize Decision of Ward Link Tree</p>
+              </div>
+            </div>
+
+            <!-- d-5 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-hierarchy">
+              <div class="portfolio-img"><img src="{{ url_for('static', filename='img/diagram/pca_ward.png') }}"
+                  class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>PCA Ward Link Hierarchy Clustering</h4>
+                <p>Visualize of Distribution Ward Link Hierarchy Clustering</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- End Chart Section 3 -->
+
+          <!-- Chart Section 4 -->
+          <div>
+            <!-- d-1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dbscan">
+              <div class="portfolio-img">
+                <img src="{{ url_for('static', filename='img/diagram/grid_dbscan.png') }}" class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>Grid Score of DBSCAN</h4>
+                <p>Identify How Many Features used in DBSCAN Cluster</p>
+              </div>
+            </div>
+            <!-- d-2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-dbscan">
+              <div class="portfolio-img">
+                <img src="{{ url_for('static', filename='img/diagram/pca_dbscan.png') }}" class="img-fluid" alt="">
+              </div>
+              <div class="portfolio-info">
+                <h4>PCA DBSCAN</h4>
+                <p>Visualize of Distribution <strong>DBSCAN</strong> Clustering</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Chart Section 4 -->
+
+        </div>
+      </div>
+    </section>
+    <!-- End Chart Section -->
+
+    <!-- Start Team Section -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>This group contains 3 certified independent study participants, namely:</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start" data-aos="zoom-in">
+              <div class="pic"><img src="{{ url_for('static', filename='img/avatar_2.jpg') }}" class="img-fluid"
+                  alt=""></div>
+              <div class="member-info">
+                <h4>Muhammad Ismail</h4>
+                <span>Studi Independen</span>
+                <p>PYTN-KS08-011</p>
+                <div class="social">
+                  <a href="https://github.com/mail2418"  target="_blank"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/muhammad-2418-ismail/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="{{ url_for('static', filename='img/avatar_1.jpg') }}" class="img-fluid"
+                  alt=""></div>
+              <div class="member-info">
+                <h4>Syahrani Nabilla Kharisma H</h4>
+                <span>Studi Independen</span>
+                <p>PYTN-KS08-013</p>
+                <div class="social">
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="#"><i
+                      class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+              <div class="pic"><img src="{{ url_for('static', filename='img/avatar_3.jpg') }}" class="img-fluid"
+                  alt=""></div>
+              <div class="member-info">
+                <h4>Shendy Krisyohanda</h4>
+                <span>Studi Independen</span>
+                <p>PYTN-KS08-021</p>
+                <div class="social">
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Team Section -->
+
+    <!-- Start Prediction Section -->
+    <section id="prediction" class="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Prediction</h2>
+          <p>Section to predict K-Means cluster according to user's input</p>
+        </div>
+        <div class="mt-4 text-center">
+          <form action="{{ url_for('predict')}}" method="post" class="php-email-form">
+            <div class="row">
+              <div class="form-group">
+                <label for="BALANCE"><b>Balance</b></label>
+                <input type="text" class="form-control" name="BALANCE" id="BALANCE"
+                  placeholder="Insert Balance Value - Range (0 - 19043)" required>
+              </div>
+              <div class="form-group">
+                <label for="BALANCE_FREQUENCY"><b>Balance Frequency</b></label>
+                <input type="text" class="form-control" name="BALANCE_FREQUENCY" id="BALANCE_FREQUENCY"
+                  placeholder="Insert Balance Frequency Value - Range (0.0 - 1.0)" required>
+              </div>
+              <div class="form-group">
+                <label for="PURCHASES"><b>Purchases</b></label>
+                <input type="text" class="form-control" name="PURCHASES" id="PURCHASES"
+                  placeholder="Insert value Purchases - Range (0 - 49039)" required>
+              </div>
+              <div class="form-group">
+                <label for="ONEOFF_PURCHASES"><b>OneOff Purchases</b></label>
+                <input type="text" class="form-control" name="ONEOFF_PURCHASES" id="ONEOFF_PURCHASES"
+                  placeholder="Insert value OneOff Purchases - Range (0 - 40761)" required>
+              </div>
+              <div class="form-group">
+                <label for="INSTALLMENTS_PURCHASES"><b>Installments Purchases</b></label>
+                <input type="text" class="form-control" name="INSTALLMENTS_PURCHASES" id="INSTALLMENTS_PURCHASES"
+                  placeholder="Insert value Installments Purchases - Range (0 - 22500)" required>
+              </div>
+              <div class="form-group">
+                <label for="CASH_ADVANCE"><b>Cash advance</b></label>
+                <input type="text" class="form-control" name="CASH_ADVANCE" id="CASH_ADVANCE"
+                  placeholder="Insert value Cash advance - Range (0 - 47137)" required>
+              </div>
+              <div class="form-group">
+                <label for="PURCHASES_FREQUENCY"><b>Purchases Frequency</b></label>
+                <input type="text" class="form-control" name="PURCHASES_FREQUENCY" id="PURCHASES_FREQUENCY"
+                  placeholder="Insert value Purchases Frequency - Range (0.0 - 1.0)" required>
+              </div>
+              <div class=" form-group">
+                <label for="ONEOFF_PURCHASES_FREQUENCY"><b>OneOff Purchases Frequency</b></label>
+                <input type="text" class="form-control" name="ONEOFF_PURCHASES_FREQUENCY"
+                  id="ONEOFF_PURCHASES_FREQUENCY"
+                  placeholder="Insert value OneOff Purchases Frequency - Range (0.0 - 1.0)" required>
+              </div>
+              <div class=" form-group">
+                <label for="PURCHASES_INSTALLMENTS_FREQUENCY"><b>Purchases Installments Frequency</b></label>
+                <input type="text" class="form-control" name="PURCHASES_INSTALLMENTS_FREQUENCY"
+                  id="PURCHASES_INSTALLMENTS_FREQUENCY"
+                  placeholder="Insert value Purchases Installments Frequency - Range (0.0 - 1.0)" required>
+              </div>
+              <div class=" form-group">
+                <label for="CASH_ADVANCE_FREQUENCY"><b>Cash Advance Frequency</b></label>
+                <input type="text" class="form-control" name="CASH_ADVANCE_FREQUENCY" id="CASH_ADVANCE_FREQUENCY"
+                  placeholder="Insert value Cash Advance Frequency - Range (0.0 - 1.5)" required>
+              </div>
+              <div class=" form-group">
+                <label for="CASH_ADVANCE_TRX"><b>Cash Advance Transaction</b></label>
+                <input type="number" class="form-control" name="CASH_ADVANCE_TRX" id="CASH_ADVANCE_TRX"
+                  placeholder="Insert value Cash Advance Transaction - Range (0 - 123)" required min="0" max="123"
+                  value="0">
+              </div>
+              <div class="form-group">
+                <label for="PURCHASES_TRX"><b>Purchases Transaction</b></label>
+                <input type="number" class="form-control" name="PURCHASES_TRX" id="PURCHASES_TRX"
+                  placeholder="Insert value Purchases Transaction - Range (0 - 358)" required min="0" max="358"
+                  value="0">
+              </div>
+              <div class="form-group">
+                <label for="CREDIT_LIMIT"><b>Credit Limit</b></label>
+                <input type="text" class="form-control" name="CREDIT_LIMIT" id="CREDIT_LIMIT"
+                  placeholder="Insert Credit Limit - Range (50 - 30000)" required>
+              </div>
+              <div class="form-group">
+                <label for="PAYMENTS"><b>Payments</b></label>
+                <input type="text" class="form-control" name="PAYMENTS" id="PAYMENTS"
+                  placeholder="Insert Payments - Range (0 - 50721)" required>
+              </div>
+              <div class="form-group">
+                <label for="MINIMUM_PAYMENTS"><b>Minimum Payments</b></label>
+                <input type="text" class="form-control" name="MINIMUM_PAYMENTS" id="MINIMUM_PAYMENTS"
+                  placeholder="Insert Minimum Payments - Range (0 - 76406)" required>
+              </div>
+              <div class="form-group">
+                <label for="PRC_FULL_PAYMENT"><b>Price Full Payment</b></label>
+                <input type="text" class="form-control" name="PRC_FULL_PAYMENT" id="PRC_FULL_PAYMENT"
+                  placeholder="Insert Price Full Payment - Range (0.0 - 1.0)" required">
+              </div>
+              <div class="form-group">
+                <label for="TENURE"><b>Tenure</b></label>
+                <select class="form-select" aria-label="Default select example" name="TENURE" id="TENURE">
+                  <option selected>Choose for Tenure</option>
+                  <option value="6">6 Month</option>
+                  <option value="7">7 Month</option>
+                  <option value="8">8 Month</option>
+                  <option value="9">9 Month</option>
+                  <option value="10">10 Month</option>
+                  <option value="11">11 Month</option>
+                  <option value="12">12 Month</option>
+                </select>
+              </div>
+              <div class="text-center">
+                <button type="submit">Predict</button>
+              </div>
+              <p class="message">{{prediction_text}}</p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- End Prediction Section -->
+  </main>
+  <!-- End Main -->
+
+  <!-- Start Footer -->
+  <footer id="footer">
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Kelompok 5 PYTN-KS08</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/noframework.waypoints.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
